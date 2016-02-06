@@ -1,0 +1,69 @@
+@import '../../styles/variables.scss';
+header > a{
+  color: $secondry;
+}
+nav ul li a{
+  color: $font-color;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  left: 0;
+  padding: 22px;
+  width:13%;
+  background-color: rgba(0,0,0,0.4);
+  border-right: 2px solid #161e23;
+}
+
+nav > header {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+nav section {
+  font-weight: 600;
+}
+nav section header {
+  padding-top: 30px;
+}
+nav section ul {
+  list-style: none;
+  padding: 0px;
+  margin-left: 10%;
+}
+nav section ul li {
+  position: relative;
+  padding: 10px 0px;
+}
+nav section ul li.active,nav section ul li a:hover {
+  color: $secondry;
+}
+nav section ul li:after {
+  content: attr(data-value);
+  position: absolute;
+  right: 0px;
+  width: 19px;
+  background-color: #738491;
+  font-size: 0.9rem;
+  color: $font-color;
+  -moz-border-radius: 19px;
+  -webkit-border-radius: 19px;
+  border-radius: 19px;
+  text-align: center;
+}
+
+.navbar-form{
+  margin-left: -10%;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.navbar-form input{
+  width: 115%
+}
+.search input{
+  color:$secondry;
+  text-align: center;
+}

@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+.media {
+  width: 80%;
+  margin-right: 5%;
+  padding-top: 1em;
+}
+.media-img {
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
+  margin: 0 auto;
+}
+.media h4 {
+  text-transform: capitalize;
+  font-size: 1.1em;
+}
+.action {
+  border: solid;
+  margin-bottom: 1em;
+  border-radius: 8px;
+  background-color: $secondry;
+  color: $secondry;
+  a {
+    color: $font-color;
+    border-right: solid 2px #B19898;
+    border-radius: 0;
+    font-weight: 600;
+  }
+}
+.nav-pills > li > a {
+  border-radius: 0;
+}
+.last-pill a {
+  border: 0;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    color: $primary;
+}

@@ -1,0 +1,25 @@
+/* Base Application Styles */
+@import './variables.scss';
+body {
+  color: $font-color;
+  background: $primary;
+  font-family: "Open Sans";
+  font-smoothing: antialiased;
+  overflow: hidden;
+  width: 100%;
+}
+.strip {
+  width: 100%;
+  height: 7px;
+  background-color: $secondry;
+  z-index: 999;
+  position: absolute;
+}
+.circle {
+  height: 42px;
+  width: 64px;
+  border-radius: 0px 27px 121px 83px;
+  background-color: $secondry;
+  position: absolute;
+  z-index: 999;
+}
