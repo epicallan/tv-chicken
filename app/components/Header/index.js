@@ -1,13 +1,14 @@
-import './header.scss';
+import './header.css';
 import React, { PropTypes, Component } from 'react';
 import SearchBar from './SearchBar';
 
-export default class Menu extends Component {
+export default class Header extends Component {
   render() {
+    const { searchAction } = this.props;
     return (
       <nav className="bar bar-nav">
         <section>
-          <SearchBar searchAction = {this.props.searchForData}/>
+          <SearchBar searchAction = { searchAction }/>
         </section>
         <section>
           <header>
@@ -57,6 +58,6 @@ export default class Menu extends Component {
     );
   }
 }
-Menu.propTypes = {
-  searchForData: PropTypes.func.isRequired
+Header.propTypes = {
+  searchAction: PropTypes.func.isRequired
 };

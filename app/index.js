@@ -1,15 +1,24 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import App from './containers/App';
+import { Router } from 'react-router';
+import routes from './routes';
 import configureStore from './store/configureStore';
 import './app.css';
 
 const store = configureStore();
+// Log the initial state
+console.log(store.getState())
+
+// Every time the state changes, log it
+// Note that subscribe() returns a function for unregistering the listener
+// store.subscribe(() =>console.log(store.getState()));
 
 render(
   <Provider store={store}>
-    <App />
+    <Router>
+      {routes}
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

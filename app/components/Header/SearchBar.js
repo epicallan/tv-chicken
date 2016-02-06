@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 export default class SearchBar extends Component {
 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
   }
 
   searchHandler = () => {

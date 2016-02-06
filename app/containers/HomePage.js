@@ -7,12 +7,12 @@ import MediaList from '../components/MediaList';
 class HomePage extends Component {
 
   constructor(props) {
-    super(props, context);
+    super(props);
   }
 
   indexView() {
     const { items, type, actions } = this.props;
-    if (this.state.items instanceof Array) {
+    if (items.length) {
       return (<MediaList actions = {actions} items={items} type={type}/>);
     }
   }
@@ -34,7 +34,7 @@ HomePage.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return { items: state.data, type: state.type, id: state.id };
+  return { items: state.items, type: state.type, id: state.id };
 }
 
 function mapDispatchToProps(dispatch) {

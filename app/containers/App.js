@@ -6,12 +6,12 @@ import Header from '../components/Header';
 
 class App extends Component {
 
-  constructor(props) {
+  constructor(props, context) {
     super(props, context);
   }
 
   componentDidMount() {
-    MediaActions.fetchData(1, 5);
+    MediaActions.fetchData({ type: 1, rating: 5 });
   }
 
   render = () => {
@@ -20,7 +20,7 @@ class App extends Component {
       <div className="index">
         <div className="strip"></div>
         <div className="circle"></div>
-        <Header actions = { actions } />
+        <Header searchAction = { actions.searchForMedia } />
         <section>
           {children}
           {(() => {

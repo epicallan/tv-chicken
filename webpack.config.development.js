@@ -26,6 +26,9 @@ config.module.loaders.push({
     'css-loader'
   ]
 }, {
+  test: /\.scss/,
+  loader: 'style-loader!css-loader!sass-loader'
+}, {
   test: /\.module\.css$/,
   loaders: [
     'style-loader',

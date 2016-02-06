@@ -1,10 +1,10 @@
-@import '../../styles/variables.scss';
+/*@import '../../variables.scss';
 header > a{
   color: $secondry;
 }
 nav ul li a{
   color: $font-color;
-}
+}*/
 
 nav {
   position: absolute;
@@ -39,7 +39,7 @@ nav section ul li {
   padding: 10px 0px;
 }
 nav section ul li.active,nav section ul li a:hover {
-  color: $secondry;
+  /*color: $secondry;*/
 }
 nav section ul li:after {
   content: attr(data-value);
@@ -48,7 +48,7 @@ nav section ul li:after {
   width: 19px;
   background-color: #738491;
   font-size: 0.9rem;
-  color: $font-color;
+  /*color: $font-color;*/
   -moz-border-radius: 19px;
   -webkit-border-radius: 19px;
   border-radius: 19px;
@@ -64,6 +64,6 @@ nav section ul li:after {
   width: 115%
 }
 .search input{
-  color:$secondry;
+  /*color:$secondry;*/
   text-align: center;
 }
