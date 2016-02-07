@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as MediaActions from '../actions';
 import MediaList from '../components/MediaList';
 
 class HomePage extends Component {
@@ -11,10 +9,8 @@ class HomePage extends Component {
   }
 
   indexView() {
-    const { items, type, actions } = this.props;
-    if (items.length) {
-      return (<MediaList actions = {actions} items={items} type={type}/>);
-    }
+    const { items, type } = this.props;
+    if (items.length) return (<MediaList items={items} type={type}/>);
   }
   render = () => {
     return (
@@ -29,18 +25,11 @@ class HomePage extends Component {
 
 HomePage.propTypes = {
   items: PropTypes.array.isRequired,
-  type: PropTypes.number.isRequired,
-  actions: PropTypes.object.isRequired
+  type: PropTypes.number,
 };
 
 function mapStateToProps(state) {
-  return { items: state.items, type: state.type, id: state.id };
+  return { items: state.items, type: state.type };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(MediaActions, dispatch)
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps)(HomePage);

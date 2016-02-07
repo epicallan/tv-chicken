@@ -23,6 +23,9 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
 
+require('electron-reload')(`${__dirname}/app`, {
+  electron: require('electron-prebuilt')
+});
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({ width: 1024, height: 728 });

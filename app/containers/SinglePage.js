@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as MediaActions from '../actions';
 import MediaSingle from '../components/MediaSingle';
 
 
@@ -12,11 +10,11 @@ class SinglePage extends Component {
   }
 
   render = () => {
-    const { id, actions } = this.props;
+    const { id } = this.props;
     return (
       <div className="single">
         <section>
-          <MediaSingle actions = {actions} id= {id} />
+          <MediaSingle id= {id} />
         </section>
       </div>
     );
@@ -32,10 +30,4 @@ function mapStateToProps(state) {
   return { id: state.id };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(MediaActions, dispatch)
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SinglePage);
+export default connect(mapStateToProps)(SinglePage);

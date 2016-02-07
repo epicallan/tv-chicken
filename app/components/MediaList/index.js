@@ -18,8 +18,8 @@ export default class MediaList extends Component {
   }
 
   render() {
-    const items = this.props.media.map((item) => {
-      return (<MediaItem id= {item.title} name={item.title} src= {item.image}/>);
+    const items = this.props.items.map((item) => {
+      return (<MediaItem name={item.title} src= {item.image}/>);
     });
 
     const chunks = _.chunk(items, this.getRowCount());
@@ -36,6 +36,5 @@ export default class MediaList extends Component {
 
 }
 MediaList.propTypes = {
-  media: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  items: PropTypes.array.isRequired,
 };

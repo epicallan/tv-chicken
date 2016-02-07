@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -8,11 +9,11 @@ import './app.css';
 
 const store = configureStore();
 // Log the initial state
-console.log(store.getState())
+// console.log(store.getState());
 
 // Every time the state changes, log it
 // Note that subscribe() returns a function for unregistering the listener
-// store.subscribe(() =>console.log(store.getState()));
+// store.subscribe(() => console.log(store.getState()));
 
 render(
   <Provider store={store}>

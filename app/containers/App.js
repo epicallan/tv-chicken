@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as MediaActions from '../actions';
 import Header from '../components/Header';
@@ -11,16 +10,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    MediaActions.fetchData({ type: 1, rating: 5 });
+    const { isFetching, dispatch } = this.props;
+    if (!isFetching) dispatch(MediaActions.fetchInitialData({ type: 1, rating: 5 }));
   }
 
   render = () => {
-    const { children, actions } = this.props;
+    const { children } = this.props;
     return (
       <div className="index">
         <div className="strip"></div>
         <div className="circle"></div>
-        <Header searchAction = { actions.searchForMedia } />
+        <Header />
         <section>
           {children}
           {(() => {
@@ -37,13 +37,12 @@ class App extends Component {
 
 App.propTypes = {
   children: PropTypes.node,
-  actions: PropTypes.object.isRequired
+  isFetching: PropTypes.bool.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(MediaActions, dispatch)
-  };
+function mapStateToProps(state) {
+  return { isFetching: state.isFetching };
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);

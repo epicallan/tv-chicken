@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 export default class SearchBar extends Component {
 
@@ -7,21 +7,22 @@ export default class SearchBar extends Component {
     super(props);
   }
 
-  searchHandler = () => {
+  /* searchHandler = () => {
     var input = ReactDOM.findDOMNode(this.refs.searchKey);
     this.props.searchAction(input.value);
-  }
+  }*/
 
   render() {
     return (
       <form className="navbar-form navbar-left search" role="search">
         <div className="form-group">
-          <input onChange={this.searchHandler} placeholder="title" ref="searchKey" type="text" />
+          <input placeholder="title" ref="searchKey" type="text" />
         </div>
       </form>
     );
   }
 }
-SearchBar.propTypes = {
+/* SearchBar.propTypes = {
   searchAction: PropTypes.func.isRequired,
 };
+*/

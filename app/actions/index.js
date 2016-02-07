@@ -1,8 +1,8 @@
 import * as types from '../constants';
-// import fetch from 'isomorphic-fetch';
+import fetch from 'isomorphic-fetch';
 
 // TODO move api constant to a config file
-// const ROOT_API = 'http://localhost:5000/api/';
+const ROOT_API = 'http://localhost:5000/api/';
 
 export function requestData(request) {
   return {
@@ -19,39 +19,31 @@ export function searchForMedia(search) {
 export function receiveData(request, json) {
   return {
     type: types.RECEIVE_DATA,
-    items: JSON.parse(json),
+    items: json,
     request,
     receivedAt: Date.now()
   };
 }
-export function fetchData(request) {
-  console.log('inteding to Fetch');
+
+export function fetchInitialData(request) {
   return (dispatch) => {
-    console.log('in fetch data');
-    return dispatch(requestData(request));
+    return dispatch(fetchData(request));
   };
 }
-/* export function fetchData(request) {
-  console.log(request);
-  // this is made possible by the thunk middle ware
-  return dispatch => {
 
+function fetchData(request) {
+  return async (dispatch) => {
     dispatch(requestData(request));
     const api = ROOT_API + 'media';
-    console.log(api);
-    return fetch(api, {
+    const response = await fetch(api, {
       method: 'post',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(request)
-    }).then(response => {
-      console.log(response);
-      response.json();
-    })
-    .then(json => dispatch(receiveData(request, json)))
-    .catch(error => { console.log(error); });
+    });
+    const json = await response.json();
+    dispatch(receiveData(request, json));
   };
 }
-*/

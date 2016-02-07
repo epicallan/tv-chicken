@@ -11,7 +11,7 @@ process.on('exit', chromedriver.stop);
 
 const delay = time => new Promise(resolve => setTimeout(resolve, time));
 
-describe('main window', function spec() {
+describe.skip('main window', function spec() {
   this.timeout(5000);
 
   before(async () => {

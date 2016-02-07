@@ -4,11 +4,10 @@ import SearchBar from './SearchBar';
 
 export default class Header extends Component {
   render() {
-    const { searchAction } = this.props;
     return (
       <nav className="bar bar-nav">
         <section>
-          <SearchBar searchAction = { searchAction }/>
+          <SearchBar />
         </section>
         <section>
           <header>
@@ -58,6 +57,7 @@ export default class Header extends Component {
     );
   }
 }
-Header.propTypes = {
+/* Header.propTypes = {
   searchAction: PropTypes.func.isRequired
 };
+*/

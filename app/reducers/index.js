@@ -1,7 +1,7 @@
 import * as type from '../constants';
 
 const initialState = {
-  isfetching: false,
+  isFetching: false,
   viewAll: true,
   type: 1,
   items: [],
@@ -12,12 +12,12 @@ export default function media(state = initialState, action) {
   switch (action.type) {
     case type.REQUEST_DATA:
       return Object.assign({}, state, {
-        isfetching: true
+        isFetching: true
       });
     case type.RECEIVE_DATA:
       return Object.assign({}, {
-        items: [...action.data, ...state.items],
-        isfetching: false
+        items: [...action.items, ...state.items],
+        isFetching: false
       });
     case type.VIEW_ALL:
       return Object.assign({}, state, {
