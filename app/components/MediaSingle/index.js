@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react';
-import './single.scss';
 import MediaInfo from './MediaInfo';
 import Video from './Video';
 import callForAction from '../CallForAction';

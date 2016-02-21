@@ -3,15 +3,18 @@ import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';
+import createLogger from 'redux-logger';
 
+const logger = createLogger();
 const finalCreateStore = compose(
-  applyMiddleware(thunk),
+  applyMiddleware(thunk, logger),
   DevTools.instrument(),
   persistState(
     window.location.href.match(
       /[?&]debug_session=([^&]+)\b/
     )
-  )
+  ),
+
 )(createStore);
 
 export default function configureStore(initialState) {

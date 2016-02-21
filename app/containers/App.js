@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as MediaActions from '../actions';
 import Header from '../components/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './app.css';
 
 class App extends Component {
 
@@ -17,19 +19,13 @@ class App extends Component {
   render = () => {
     const { children } = this.props;
     return (
-      <div className="index">
-        <div className="strip"></div>
-        <div className="circle"></div>
+      <div className = {styles.app}>
+        <div className={styles.strip}></div>
+        <div className={styles.circle}></div>
         <Header />
         <section>
           {children}
-          {(() => {
-            if (process.env.NODE_ENV !== 'production') {
-              const DevTools = require('./DevTools');
-              return <DevTools/>;
-            }
-          })()
-        }</section>
+        </section>
       </div>
     );
   }

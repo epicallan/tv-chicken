@@ -1,0 +1,22 @@
+.action {
+
+  border: solid;
+  margin-bottom: 1em;
+}
+.action a {
+
+  border-right: solid 2px #B19898;
+  border-radius: 0;
+  font-weight: 600;
+}
+.nav-pills > li > a {
+  border-radius: 0;
+}
+.last-pill a {
+  border: 0;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+
+    text-decoration: none;
+    background-color: transparent;
+}

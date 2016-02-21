@@ -1,5 +1,7 @@
 import React, { PropTypes, Component } from 'react';
-import MediaItem from './MediaItem';
+import MediaItem from '../MediaItem';
+import cx from 'classnames';
+import styles from './mediaList.module.css';
 import _ from 'lodash';
 
 export default class MediaList extends Component {
@@ -19,18 +21,19 @@ export default class MediaList extends Component {
 
   render() {
     const items = this.props.items.map((item) => {
-      return (<MediaItem name={item.title} src= {item.image}/>);
+      return (<MediaItem id = {item._id} name={item.title} src= {item.image}/>);
     });
 
     const chunks = _.chunk(items, this.getRowCount());
-    const rows = chunks.map(chunk => {
+    const rows = chunks.map((chunk, index) => {
       return (
-        <div className="row">{chunk}</div>
+        <div className="row" key = {index + '-chunk'} >{chunk}</div>
       );
     });
     return (
-      <section className="container media">
-        {rows}</section>
+      <section className={cx('container', styles.media)}>
+        {rows}
+      </section>
     );
   }
 

@@ -1,11 +1,12 @@
-import './header.css';
-import React, { PropTypes, Component } from 'react';
-import SearchBar from './SearchBar';
+import React, { Component } from 'react';
+import SearchBar from '../SearchBar';
+import styles from './header.module.css';
+import cx from 'classnames';
 
 export default class Header extends Component {
   render() {
     return (
-      <nav className="bar bar-nav">
+      <nav className={cx('bar', 'bar-nav', styles.nav)}>
         <section>
           <SearchBar />
         </section>

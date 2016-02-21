@@ -12,11 +12,9 @@ class SinglePage extends Component {
   render = () => {
     const { id } = this.props;
     return (
-      <div className="single">
-        <section>
-          <MediaSingle id= {id} />
-        </section>
-      </div>
+      <section>
+        <MediaSingle id= {id} />
+      </section>
     );
   }
 }

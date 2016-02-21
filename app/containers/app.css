@@ -1,0 +1,20 @@
+body {
+  overflow-x: hidden;
+  color: white;
+  background-color: #370F2A;
+  overflow-x: hidden;
+  width: 100%;
+}
+.strip {
+  composes: color background-secondry from '../styles/colors.module.css';
+  composes: ontop from '../styles/colors.module.css';
+  width: 100%;
+  height: 7px;
+}
+.circle {
+  composes: color background-secondry from '../styles/colors.module.css';
+  composes: ontop from '../styles/colors.module.css';
+  height: 42px;
+  width: 64px;
+  border-radius: 0px 27px 121px 83px;
+}

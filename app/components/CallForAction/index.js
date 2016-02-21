@@ -1,8 +1,10 @@
 import React from 'react';
+// import cx from 'classnames';
+import styles from './callForAction.module.css';
 
 export default function CallForAction(id, onPreveiewClick) {
   return (
-    <div className="action">
+    <div className={styles.action}>
       <ul className="nav nav-pills">
         <li role="presentation">
           <a href="#single" onClick = {onPreveiewClick.bind(this, id)}>

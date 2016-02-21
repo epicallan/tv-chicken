@@ -1,12 +1,4 @@
-/*@import '../../variables.scss';
-header > a{
-  color: $secondry;
-}
-nav ul li a{
-  color: $font-color;
-}*/
-
-nav {
+.nav {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -18,30 +10,30 @@ nav {
   border-right: 2px solid #161e23;
 }
 
-nav > header {
+.nav > header {
   font-weight: 700;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-nav section {
+.nav section {
   font-weight: 600;
 }
-nav section header {
+.nav section header {
   padding-top: 30px;
 }
-nav section ul {
+.nav section ul {
   list-style: none;
   padding: 0px;
   margin-left: 10%;
 }
-nav section ul li {
+.nav section ul li {
   position: relative;
   padding: 10px 0px;
 }
-nav section ul li.active,nav section ul li a:hover {
+.nav section ul li.active,.nav section ul li a:hover {
   /*color: $secondry;*/
 }
-nav section ul li:after {
+.nav section ul li:after {
   content: attr(data-value);
   position: absolute;
   right: 0px;
@@ -52,18 +44,5 @@ nav section ul li:after {
   -moz-border-radius: 19px;
   -webkit-border-radius: 19px;
   border-radius: 19px;
-  text-align: center;
-}
-
-.navbar-form{
-  margin-left: -10%;
-  margin-top: 3em;
-  margin-bottom: 3em;
-}
-.navbar-form input{
-  width: 115%
-}
-.search input{
-  /*color:$secondry;*/
   text-align: center;
 }

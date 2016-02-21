@@ -1,0 +1,15 @@
+.ontop{
+  position: absolute;
+  z-index: 999
+}
+.circular{
+  border-radius: 0px 27px 121px 83px;
+}
+.thumbnail {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
+  margin: 0 auto;
+}

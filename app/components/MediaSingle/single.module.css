@@ -1,24 +1,19 @@
-@import '../../styles/variables.scss';
+
 .video{
   width:40em;
 }
 .single{
   padding-top: 7em;
-  .action{
-    margin-top: 2em;
-    margin-left: -1em;
-  }
 }
 .title{
-  color: $secondry;
   text-transform: capitalize;
 }
 h3{
-  @extend .title;
+
   font-size: 1.4em;
 
 }
 .single h4{
-  @extend .title;
+
   font-size: 1.2em;
 }

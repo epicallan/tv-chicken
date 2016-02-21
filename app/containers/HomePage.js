@@ -14,11 +14,9 @@ class HomePage extends Component {
   }
   render = () => {
     return (
-      <div className="home">
-        <section>
+      <section>
           {this.indexView()}
-        </section>
-      </div>
+      </section>
     );
   }
 }

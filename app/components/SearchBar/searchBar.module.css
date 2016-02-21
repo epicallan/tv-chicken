@@ -1,0 +1,8 @@
+.navbar-form{
+  margin-left: -10%;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.navbar-form input{
+  width: 115%
+}
