@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import styles from './callForAction.module.css';
 
 const onPreveiewClick = (id) => {
@@ -8,8 +9,8 @@ const onPreveiewClick = (id) => {
 
 export default function CallForAction(props) {
   return (
-    <div className={styles.action} id="actions-override" >
-      <ul className="nav nav-pills">
+    <div className={styles.action} >
+      <ul className={cx('nav', styles['nav-pills'])}>
         <li role="presentation">
           <a href="#single" className = {styles.actionLink} onClick = {onPreveiewClick.bind(this, props.id)}>
             Preview

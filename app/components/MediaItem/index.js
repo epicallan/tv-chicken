@@ -10,7 +10,7 @@ const MediaItem = (props) => {
       <div className="center-block">
         <h4 className={cx('text-center', styles.title)}>{props.name}</h4>
       </div>
-      <callForAction id = {props.id} />
+      {callForAction({ id: props.id })}
     </section>
   );
 };

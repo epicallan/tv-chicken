@@ -21,7 +21,7 @@ export default class MediaList extends Component {
 
   render() {
     const items = this.props.items.map((item) => {
-      return (<MediaItem key = {item._id} name={item.title} src= {item.image}/>);
+      return (<MediaItem key = {item._id} id = {item._id} name={item.title} src= {item.image}/>);
     });
 
     const chunks = _.chunk(items, this.getRowCount());
