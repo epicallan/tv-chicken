@@ -1,10 +1,9 @@
 .mediaImage {
+  composes: thumbnail from '../../styles/layout.module.css';
+  composes: bevel from '../../styles/effects.module.css';
   background: #fff;
 }
-
-.test {
-  float: left;
-}
 .title {
-  float: right;
+  composes: subTitle from '../../styles/typography.module.css';
+  font-size: 1.1em;
 }

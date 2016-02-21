@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import MediaItem from '../MediaItem';
-import cx from 'classnames';
+// import cx from 'classnames';
 import styles from './mediaList.module.css';
 import _ from 'lodash';
 
@@ -21,7 +21,7 @@ export default class MediaList extends Component {
 
   render() {
     const items = this.props.items.map((item) => {
-      return (<MediaItem id = {item._id} name={item.title} src= {item.image}/>);
+      return (<MediaItem key = {item._id} name={item.title} src= {item.image}/>);
     });
 
     const chunks = _.chunk(items, this.getRowCount());
@@ -31,7 +31,7 @@ export default class MediaList extends Component {
       );
     });
     return (
-      <section className={cx('container', styles.media)}>
+      <section className={styles.media}>
         {rows}
       </section>
     );

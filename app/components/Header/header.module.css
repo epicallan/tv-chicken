@@ -1,11 +1,10 @@
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   z-index: 99;
   left: 0;
-  padding: 22px;
-  width:13%;
+  padding: 16px;
   background-color: rgba(0,0,0,0.4);
   border-right: 2px solid #161e23;
 }

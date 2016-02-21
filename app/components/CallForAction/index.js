@@ -1,13 +1,17 @@
 import React from 'react';
-// import cx from 'classnames';
 import styles from './callForAction.module.css';
 
-export default function CallForAction(id, onPreveiewClick) {
+const onPreveiewClick = (id) => {
+  console.log('in media items: ' + id);
+  // mediaActions.singleView(id);
+};
+
+export default function CallForAction(props) {
   return (
-    <div className={styles.action}>
+    <div className={styles.action} id="actions-override" >
       <ul className="nav nav-pills">
         <li role="presentation">
-          <a href="#single" onClick = {onPreveiewClick.bind(this, id)}>
+          <a href="#single" className = {styles.actionLink} onClick = {onPreveiewClick.bind(this, props.id)}>
             Preview
           </a>
         </li>
@@ -21,3 +25,7 @@ export default function CallForAction(id, onPreveiewClick) {
     </div>
   );
 }
+
+CallForAction.propTypes = {
+  id: React.PropTypes.string.isRequired,
+};

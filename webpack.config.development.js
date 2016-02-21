@@ -20,14 +20,17 @@ config.entry = [
 config.output.publicPath = 'http://localhost:3000/dist/';
 
 config.module.loaders.push({
-  test: /\.scss/,
-  loader: 'style-loader!css-loader!sass-loader'
+  test: /^((?!\.module).)*\.css$/,
+  loaders: [
+    'style-loader',
+    'css-loader?sourceMap'
+  ]
 }, {
-  test: /\.css/,
-  loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-}, {
-  test: /\.(png|jpg|gif|woff|woff2|eot|svg|ttf)$/,
-  loader: 'url-loader?limit=8192'
+  test: /\.module\.css$/,
+  loaders: [
+    'style-loader',
+    'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!'
+  ]
 });
 
 config.plugins.push(

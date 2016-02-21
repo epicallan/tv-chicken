@@ -2,8 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as MediaActions from '../actions';
 import Header from '../components/Header';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from './app.css';
+import TopHeaderBar from '../components/TopHeaderBar';
 
 class App extends Component {
 
@@ -19,14 +18,17 @@ class App extends Component {
   render = () => {
     const { children } = this.props;
     return (
-      <div className = {styles.app}>
-        <div className={styles.strip}></div>
-        <div className={styles.circle}></div>
-        <Header />
-        <section>
-          {children}
-        </section>
-      </div>
+        <div className = "container-fluid">
+          <TopHeaderBar />
+          <div className= "row">
+            <section className = "col-md-3">
+              <Header />
+            </section>
+            <section className = "col-md-9">
+              {children}
+            </section>
+          </div>
+        </div>
     );
   }
 }
