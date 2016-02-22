@@ -5,7 +5,6 @@ const initialState = {
   viewAll: true,
   type: 1,
   items: [],
-  id: null,
 };
 
 export default function media(state = initialState, action) {
@@ -15,7 +14,7 @@ export default function media(state = initialState, action) {
         isFetching: true
       });
     case type.RECEIVE_DATA:
-      return Object.assign({}, {
+      return Object.assign({}, state, {
         items: [...action.items, ...state.items],
         isFetching: false
       });

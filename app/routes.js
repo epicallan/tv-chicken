@@ -7,6 +7,6 @@ import SinglePage from './containers/SinglePage';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
-    <Route path="/single" component={SinglePage} />
+    <Route path="single/:id" component={SinglePage} />
   </Route>
 );

@@ -6,6 +6,8 @@ import { Router } from 'react-router';
 import routes from './routes';
 import configureStore from './store/configureStore';
 import './app.css';
+// import createBrowserHistory from 'history/lib/createBrowserHistory';
+// const history = createBrowserHistory();
 
 const store = configureStore();
 // Log the initial state

@@ -6,26 +6,32 @@ import MediaSingle from '../components/MediaSingle';
 class SinglePage extends Component {
 
   constructor(props) {
-    super(props, context);
+    super(props);
+  }
+
+  getMedia(id) {
+    return this.props.items.filter(item => item._id === id)[0];
   }
 
   render = () => {
-    const { id } = this.props;
+    const { params, type } = this.props;
+    const item = this.getMedia(params.id);
     return (
       <section>
-        <MediaSingle id= {id} />
+        <MediaSingle media = {item} type = {type} />
       </section>
     );
   }
 }
 
 SinglePage.propTypes = {
-  id: PropTypes.number.isRequired,
-  actions: PropTypes.object.isRequired
+  params: PropTypes.object.isRequired,
+  type: PropTypes.number.isRequired,
+  items: PropTypes.array.isRequired,
 };
 
 function mapStateToProps(state) {
-  return { id: state.id };
+  return { type: state.type, items: state.items };
 }
 
 export default connect(mapStateToProps)(SinglePage);

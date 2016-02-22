@@ -16,7 +16,7 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <form id = "form-override" className= {cx(styles['navbar-form'], 'navbar-left', styles.search)} role="search">
+      <form className= {cx(styles['navbar-form'], 'navbar-left', 'navbar-form')} role="search">
         <div className="form-group">
           <input className = "text-center" placeholder="title" ref="searchKey" onClick = {this.searchHandler} type="text" />
         </div>

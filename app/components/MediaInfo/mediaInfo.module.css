@@ -1,0 +1,12 @@
+.title{
+  composes: secondry from '../../styles/colors.module.css';
+  text-transform: capitalize;
+}
+.heading{
+  composese:title;
+  font-size: 1.4em;
+}
+.subHeading{
+  composese:title;
+  font-size: 1.2em;
+}
