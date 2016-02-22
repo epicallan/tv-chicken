@@ -10,16 +10,16 @@ const onPreveiewClick = (id) => {
 export default function CallForAction(props) {
   return (
     <div className={styles.action} >
-      <ul className={cx('nav', styles['nav-pills'])}>
+      <ul className={cx(styles.nav, 'nav', 'nav-pills')}>
         <li role="presentation">
-          <a href="#single" className = {styles.actionLink} onClick = {onPreveiewClick.bind(this, props.id)}>
+          <a href="#single" onClick = {onPreveiewClick.bind(this, props.id)}>
             Preview
           </a>
         </li>
         <li role="presentation">
-          <a href="#redeem">Redeem</a>
+          <a href="#redeem" >Redeem</a>
         </li>
-        <li className="last-pill" role="presentation">
+        <li className={styles.lastPill} role="presentation">
           <a href="#buy">Buy</a>
         </li>
       </ul>

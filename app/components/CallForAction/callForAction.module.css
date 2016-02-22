@@ -1,34 +1,33 @@
 .action {
   composes: color background-secondry from '../../styles/colors.module.css';
-  composes: bevel-lg from '../../styles/colors.module.css';
-  border: solid;
+  composes: bevel-lg from '../../styles/effects.module.css';
   margin-bottom: 1em;
 }
-.actionLink {
-  composes: color from '../../styles/colors.module.css';
+
+.action :global a {
+  color: #fff;
   border-right: solid 2px #B19898;
   border-radius: 0;
-  font-weight: 600;
-}
-.nav-pills > li > a {
-  border-radius: 0;
-}
-.last-pill a {
-  border: 0;
-}
-.nav > li > a:hover, .nav > li > a:focus {
-  text-decoration: none;
-  background-color: transparent;
 }
 
-.nav-pills > li > a {
-  border-radius: 0;
+
+.nav > li > a {
+  padding: 8px 10px;
 }
-.last-pill a {
-  border: 0;
-}
-.actionLink :hover, .actionLink :focus {
+
+.nav li a:hover {
   text-decoration: none;
   background-color: transparent;
   color: #370F2A;
+}
+
+/*.nav :global > li > a:hover, .nav : global > li > a:focus {
+
+}
+*/
+.nav-pills > li > a {
+  border-radius: 0;
+}
+.lastPill a {
+  border: 0;
 }
