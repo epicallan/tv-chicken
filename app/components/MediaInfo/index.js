@@ -5,7 +5,7 @@ import styles from './mediaInfo.module.css';
 export default class MediaInfo extends Component {
 
   render() {
-    const actors = this.props.info.actors.map(actor => <li>{actor}</li>);
+    const actors = this.props.info.actors.map(actor => <li key = {actor}>{actor}</li>);
     const directors = this.props.info.director.map(dir => <li>{dir}</li>);
     return (
       <div className="col-md-4 col-sm-6 col-xs-12">
