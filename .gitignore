@@ -2,7 +2,7 @@
 logs
 *.log
 .todo.md
-
+movies
 # Runtime data
 pids
 *.pid

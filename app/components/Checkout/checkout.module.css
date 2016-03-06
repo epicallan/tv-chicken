@@ -1,0 +1,3 @@
+.checkout{
+  composes: blue from '../../styles/colors.module.css';
+}

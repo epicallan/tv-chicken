@@ -16,6 +16,27 @@ export function searchForMedia(search) {
   return fetchData(search);
 }
 
+export function addToCart(title) {
+  return {
+    type: types.AddToCart,
+    title,
+  };
+}
+
+export function showCheckout(show) {
+  return {
+    type: types.ShowCheckout,
+    show,
+  };
+}
+
+export function removeFromCart(title) {
+  return {
+    type: types.RemoveFromCart,
+    title,
+  };
+}
+
 export function receiveData(request, json) {
   return {
     type: types.RECEIVE_DATA,

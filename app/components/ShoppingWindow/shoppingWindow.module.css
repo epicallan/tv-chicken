@@ -1,0 +1,16 @@
+.window{
+  position: fixed;
+  width: 10em;
+  top: 5em;
+  right: 1em;
+  text-align: center;
+  composes: background-secondry from '../../styles/colors.module.css';
+  border: solid #370F2A;
+  composes: bevel-lg from '../../styles/effects.module.css';
+}
+.window h4{
+  font-size: 1em;
+}
+.media {
+  composes: blue from '../../styles/colors.module.css';
+}

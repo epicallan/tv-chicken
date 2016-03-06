@@ -21,7 +21,7 @@ export default class MediaList extends Component {
 
   render() {
     const items = this.props.items.map((item) => {
-      return (<MediaItem key = {item._id} id = {item._id} location = {item.location} name={item.title} src= {item.image}/>);
+      return (<MediaItem dispatch = {this.props.dispatch} key = {item._id} id = {item._id} location = {item.location} name={item.title} src= {item.image}/>);
     });
 
     const chunks = _.chunk(items, this.getRowCount());
@@ -40,4 +40,5 @@ export default class MediaList extends Component {
 }
 MediaList.propTypes = {
   items: PropTypes.array.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
