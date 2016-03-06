@@ -10,7 +10,7 @@ const MediaItem = (props) => {
       <div className="center-block">
         <h4 className={cx('text-center', styles.title)}>{props.name}</h4>
       </div>
-      {callForAction({ id: props.id })}
+      {callForAction({ id: props.id, location: props.location })}
     </section>
   );
 };
@@ -18,6 +18,7 @@ const MediaItem = (props) => {
 MediaItem.propTypes = {
   src: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
 export default MediaItem;
