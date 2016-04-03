@@ -31,7 +31,7 @@ export default class shoppingWindow extends Component {
           <h4>Shopping Cart</h4>
           <ButtonGroup vertical block>
             {items}
-            <Button key = {'selectAll-btn'} onClick = {this.buyAll} className = {styles.media}> select All</Button>
+            <Button key = {'selectAll-btn'} onClick = {this.buyAll} className = {styles.media}> Checkout All</Button>
           </ButtonGroup>
         </div>
         <Checkout shopped = {this.state.shopped} show = {this.props.showCheckout} dispatch = {this.props.dispatch} />
